@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+             x:Class="Wellness.Mobile.Views.ClanarinaPage">
+
+    <ContentPage.BindingContext>
+        <vm:ClanarinaViewModel>
+
+        </vm:ClanarinaViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+
+
+
+
+
+
+
+
+
+
+        <ListView ItemsSource="{Binding clanarine}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding DatumUplate}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="18" />
+                                <Label Text="{Binding UplataMjesecGodina}" 
+                                           LineBreakMode="NoWrap"
+                                           FontSize="18" />
+                                <Label Text="{Binding PaketIznosUplate}" 
+                                           LineBreakMode="NoWrap"
+                                           FontSize="18" />
+
+                                <BoxView BackgroundColor="Black" WidthRequest="1" HeightRequest="1" />
+                            </StackLayout>
+
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ContentPage.Content>
+
+</ContentPage>

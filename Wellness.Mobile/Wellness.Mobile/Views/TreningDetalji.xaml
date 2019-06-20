@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+             x:Class="Wellness.Mobile.Views.TreningDetalji">
+
+    <ContentPage.BindingContext>
+        <vm:TreningDetaljiViewModel>
+
+        </vm:TreningDetaljiViewModel>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+
+
+        <Grid
+            Padding="15"
+            FlowDirection="LeftToRight"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="{Binding treningDetaljiModel.TreningModel.TipTreninga}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   />
+            <Label Text="{Binding treningDetaljiModel.TreningModel.DatumTreninga}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   />
+            <Label Text="{Binding treningDetaljiModel.TreningModel.PocetakKraj}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   />
+            <Label Text="{Binding treningDetaljiModel.TreningModel.Trener}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="3"
+                   />
+            <Label Text="{Binding treningDetaljiModel.TreningModel.TrenutnoMaxPrisutnih}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="13"
+                   Grid.Column="1"
+                   Grid.Row="4"
+                   />
+
+
+
+            <BoxView BackgroundColor="Black" WidthRequest="1" HeightRequest="1" Grid.Row="6" Grid.ColumnSpan="3"/>
+            <Label 
+                Grid.Row="7"
+                Grid.Column="0"
+                Text="Prisustva"/>
+            <ListView 
+                Grid.Row="8"
+                Grid.ColumnSpan="3"
+                ItemsSource="{Binding treningDetaljiModel.PrisutniModel}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding ImePrezime}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="14" />
+                                    <Label Text="{Binding PrisustvovaoIspis}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="14" />
+                                    <Label Text="{Binding OcjenaIspis}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="14" />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+            
+            
+            <BoxView BackgroundColor="Black" WidthRequest="1" HeightRequest="1" Grid.Row="9" Grid.ColumnSpan="3"/>
+            <Label 
+                Grid.Row="10"
+                Grid.Column="0"
+                Text="Predlozeni treninzi"/>
+            <ListView 
+                Grid.Row="11"
+                Grid.ColumnSpan="3"
+                ItemsSource="{Binding treningDetaljiModel.RecommendedTrening}"
+                SelectedItem="ListView_ItemSelected"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding TipTreninga}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="14" />
+                                    <Label Text="{Binding DatumTreninga}" 
+                                           LineBreakMode="NoWrap"
+                                           FontSize="14" />
+                                    <Label Text="{Binding PocetakKraj}" 
+                                           LineBreakMode="NoWrap"
+                                           FontSize="14" />
+
+
+                                </StackLayout>
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>

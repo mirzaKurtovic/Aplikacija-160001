@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+    x:Class="Wellness.Mobile.Views.PopupView">
+
+    <ContentPage.BindingContext>
+        <vm:PopupViewModel>
+
+        </vm:PopupViewModel>
+        </ContentPage.BindingContext>
+    
+            <StackLayout 
+            Padding="25"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            BackgroundColor="White">
+            <Label 
+                Text="{Binding PopupModel.type}"
+                FontSize="15"
+                TextColor="black"
+                HorizontalOptions="Center"
+                />
+            <Label Text="{Binding PopupModel.text}"
+                   x:Name="Text"
+                   HorizontalOptions="Center"
+                   />
+            <Button 
+                Text="ok"
+                Command="{Binding CloseCommand}"
+                Clicked="Button_Clicked"
+                    />
+
+
+        </StackLayout>
+
+</pages:PopupPage>

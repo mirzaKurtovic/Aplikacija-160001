@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+             x:Class="Wellness.Mobile.Views.TreningPage">
+    <ContentPage.BindingContext>
+        <vm:TreningViewModel>
+
+        </vm:TreningViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+
+
+
+
+        <StackLayout>
+
+                <Picker 
+                    Margin="10"
+                    ItemsSource ="{Binding TipTreninga}" 
+                    ItemDisplayBinding="{Binding TipTreninga1}" 
+                    SelectedItem="{Binding SelectedTipTreninga}"
+                    Title="Tip treninga"
+                    >
+            </Picker>
+
+            <Picker 
+                    Margin="10"
+                    ItemsSource ="{Binding SearchFilter}"
+                    SelectedItem="{Binding selectedSearchFilter}"
+                    Title="Mod"
+                    >
+                    <Picker.SelectedIndex>
+                        0
+                    </Picker.SelectedIndex>
+                </Picker>
+
+
+
+
+
+            <ListView ItemsSource="{Binding Trening}" ItemSelected="ListView_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding TipTreninga}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="18" />
+
+                                    <Label Text="{Binding DatumTreninga}"
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="16"
+                                           />
+                                    <Label Text="{Binding PocetakKraj}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetaileText}"
+                                           FontSize="16" />
+
+
+
+                                    <Label Text="{Binding Trener}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetaileText}"
+                                           FontSize="16" />
+
+
+                                    <Label Text="{Binding TrenutnoMaxPrisutnih}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetaileText}"
+                                           FontSize="13" />
+
+                                    <Switch
+                                        IsToggled="{Binding Prisustvuje}"
+                                        IsEnabled="{Binding OdrzanNeagitve}"
+                                        />
+                                    <BoxView HeightRequest="1" WidthRequest="1" BackgroundColor="black"/>
+
+                                        <Label 
+                                        IsVisible="{Binding ClanPrisustvovaoTreningu}"
+                                        Text="Vasa Ocjena(1-5)"/>
+                                    <Entry  Placeholder="5" 
+                                            IsVisible="{Binding ClanPrisustvovaoTreningu}"
+                                            Keyboard="Numeric"
+                                            Text="{Binding Ocjena}"
+                                            IsEnabled="{Binding OcjenjenNeagtive}"
+                                            />
+                                    <Button Text="Ocjeni"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="Button_Clicked"
+                                            IsVisible="{Binding ClanPrisustvovaoTreningu}"
+                                            IsEnabled="{Binding OcjenjenNeagtive}"
+                                            />
+
+
+
+                                </StackLayout>
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

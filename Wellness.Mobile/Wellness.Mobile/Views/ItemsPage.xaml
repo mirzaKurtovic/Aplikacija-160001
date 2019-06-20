@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wellness.Mobile.Views.ItemsPage"
+              Title="Opis"
+             x:Name="BrowseItemsPage">
+
+
+
+    <Editor
+        FlowDirection="LeftToRight"
+        >
+        <Editor.Text>
+            Mobilna aplikacija je namjenjena clanovima Wellness centra.
+        Clanovi imaju mogucnost pregleda treninga. Unutar forme Treninzi
+        clan ima mogucnost rezervacije mjesta na treninzima.
+        Kada trening prodje u slucaju da je clan prisustvovao
+        on ima mogucnost da ocjeni taj trening.
+        Kada clan klikne na neki trening, prikazu se detalji treninga,
+        prisutni, i neki slicni treninzi.
+        ---------------------
+       
+        Clan ima mogucnost editovanja nekih svojih
+        osnovnih informacija unutar forme profil
+       
+        ---------------------
+        
+        Clan ima mogucnost pregleda svojih
+        uplata unutar forme Clanarina
+
+        </Editor.Text>
+    </Editor>
+
+</ContentPage>

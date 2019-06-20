@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+             x:Class="Wellness.Mobile.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
+
+            <Label Text="Korisnicko ime: "
+      HorizontalOptions="CenterAndExpand" />
+            <Entry
+      Text="{Binding Username}"
+                />
+
+
+            <Label Text="Password: "
+      HorizontalOptions="CenterAndExpand" />
+            <Entry
+      Text="{Binding Password}"
+                />
+
+            <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Prijava"></Button>
+            <Button Command="{Binding RegisterCommand}"  HorizontalOptions="FillAndExpand" Text="Registruj se"></Button>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
