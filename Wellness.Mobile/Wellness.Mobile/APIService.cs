@@ -37,24 +37,24 @@ namespace Wellness.Mobile
                 url += await search.ToQueryString();
             }
 
-            return await url.GetJsonAsync<T>();
+            return await url.WithBasicAuth(_username, _password).GetJsonAsync<T>();
         }
         public async Task<T> GetById<T>(object id)
         {
             var url = $"{_apiUrl}/{ _route}/{id}";
-            return await url.GetJsonAsync<T>();
+            return await url.WithBasicAuth(_username, _password).GetJsonAsync<T>();
         }
 
         public async Task<T> Insert<T>(object request)
         {
             var url = $"{_apiUrl}/{ _route}";
-            return await url.PostJsonAsync(request).ReceiveJson<T>();
+            return await url.WithBasicAuth(_username, _password).PostJsonAsync(request).ReceiveJson<T>();
         }
 
         public async Task<T> Update<T>(object id, object request)
         {
             var url = $"{_apiUrl}/{ _route}/{id}";
-            var result = await url.PutJsonAsync(request).ReceiveJson<T>();
+            var result = await url.WithBasicAuth(_username, _password).PutJsonAsync(request).ReceiveJson<T>();
             return result;
         }
         public async Task<T> Delete<T>(object id)
@@ -62,7 +62,7 @@ namespace Wellness.Mobile
           
             var url = $"{_apiUrl}/{ _route}/{id}";
  
-            return await url.DeleteAsync().ReceiveJson<T>();
+            return await url.WithBasicAuth(_username, _password).DeleteAsync().ReceiveJson<T>();
 
         }
     }

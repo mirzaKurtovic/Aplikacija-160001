@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Wellness.WebAPI.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AutentifikacijaController : ControllerBase
