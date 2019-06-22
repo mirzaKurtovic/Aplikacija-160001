@@ -51,8 +51,21 @@ namespace Wellness.WebAPI.Util
 
 
             }
+            /*
 
 
+            List<Trening> trList = new List<Trening>();
+
+            for (int i = 0; i < preporuceniTreninzi.Count; i++)
+            {
+                var tr = _context.Trening.Where(t => t.TipTreningaId == preporuceniTreninzi[i].TipTreningaId && t.Odrzan != true).ToList();
+                foreach (var x in tr)
+                {
+                    trList.Add(x);
+                }
+            }
+            trList = trList.Distinct().ToList();
+            */
             return preporuceniTreninzi;
         }
 

@@ -99,11 +99,13 @@
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemTextStyle}"
                                            FontSize="14" />
-                                    <Label Text="{Binding PrisustvovaoIspis}" 
+                                    <Label Text="{Binding PrisustvovaoIspis,
+                                           StringFormat='Prisustvovao {0}'}" 
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemTextStyle}"
                                            FontSize="14" />
-                                    <Label Text="{Binding OcjenaIspis}" 
+                                    <Label Text="{Binding OcjenaIspis,
+                                           StringFormat='Ocjena {0}'}"
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemTextStyle}"
                                            FontSize="14" />
@@ -125,7 +127,7 @@
             <Label 
                 Grid.Row="10"
                 Grid.Column="0"
-                Text="Predlozeni treninzi"/>
+                Text="Slicni treninzi"/>
             <ListView 
                 Grid.Row="11"
                 Grid.ColumnSpan="3"

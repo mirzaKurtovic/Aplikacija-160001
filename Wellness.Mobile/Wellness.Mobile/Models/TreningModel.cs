@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Wellness.Mobile.AsyncHelper;
+using Wellness.Mobile.Views;
 
 namespace Wellness.Mobile.Models
 {
@@ -60,6 +63,9 @@ namespace Wellness.Mobile.Models
                             Prisustvovao = false,
                         };
                         var result = AsyncHelpers.RunSync<Wellness.Model.ClanPrisustvo>(() => _apiService_ClanPrisustvo.Insert<Wellness.Model.ClanPrisustvo>(insert));
+                       
+
+
                         PrisustvoId = result.Id;
                     }
                 }
