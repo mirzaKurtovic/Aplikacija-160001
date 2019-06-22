@@ -26,6 +26,16 @@
             <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Prijava"></Button>
             <Button Command="{Binding RegisterCommand}"  HorizontalOptions="FillAndExpand" Text="Registruj se"></Button>
 
+
+            <Label
+                Text="--Napomena--"
+                />
+            <Label
+                Text="Username: Clan12"
+                />
+            <Label
+                Text="Password: Clan12"
+                />
         </StackLayout>
 
 
