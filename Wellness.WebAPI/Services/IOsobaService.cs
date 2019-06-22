@@ -9,9 +9,9 @@ namespace Wellness.WebAPI.Services
     
     public interface IOsobaService
     {
-       Wellness.Model.Osoba Authenticiraj(string username, string pass);
+        Wellness.Model.Osoba Authenticiraj(string username, string pass);
 
-
+        List<Wellness.Model.Osoba> Get(OsobaSearchReqeust request);
         Wellness.Model.Osoba GetById(int id);
 
         Wellness.Model.Osoba Insert(OsobaInsertRequest request);

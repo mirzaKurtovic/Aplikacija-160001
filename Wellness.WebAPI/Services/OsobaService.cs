@@ -22,6 +22,26 @@ namespace Wellness.WebAPI.Services
             _mapper = mapper;
         }
 
+
+        public List<Wellness.Model.Osoba> Get(OsobaSearchReqeust request)
+        {
+            var query = _context.Osoba.AsQueryable();
+
+            if (request != null)
+            {
+                if(request.Username!=null)
+                {
+                    query = query.Where(o => o.KorisnickoIme == request.Username);
+
+                }
+            }
+
+            var list = query.ToList();
+
+            return _mapper.Map<List<Wellness.Model.Osoba>>(list);
+        }
+
+
         public Wellness.Model.Osoba Authenticiraj(string username, string pass)
         {
             var user = _context.Osoba

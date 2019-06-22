@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -67,7 +68,60 @@ namespace Wellness.Mobile.ViewModels
         public async Task Register()
         {
             IsBusy = true;
+
+
+            #region primitiveValidation
+
+            if (registerModel.Ime.Length > 32)
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Ime ne smije biti duze od 32 karaktera"));
+                return;
+            }
+            if (registerModel.Prezime.Length > 32)
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Prezime ne smije biti duze od 32 karaktera"));
+                return;
+            }
+            if (registerModel.JMBG.Length != 13)
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG mora biti 13 karaktera"));
+                return;
+            }
+            if (!registerModel.JMBG.Any(char.IsDigit))
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG mora biti sastavljen od brojeva"));
+                return;
+            }
+            if (string.IsNullOrEmpty(registerModel.KorisnickoIme))
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Korisnicko ime obavezno"));
+                return;
+            }
+
+           
+
+            var clanList = await _apiService.Get<List<Wellness.Model.Osoba>>(new OsobaSearchReqeust() { Username = registerModel.KorisnickoIme });
+
+
+            if (_clan == null)
+            {
+                if (clanList.Count != 0)
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Korisnicko ime vec iskoristeno"));
+                    return;
+                }
+
+                if (registerModel.Password != registerModel.PasswordPotvrda)
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Password-i se ne podudaraju"));
+                    return;
+                }
+            }
             
+
+            #endregion primitiveValidation
+
+
             Model.Requests.OsobaInsertRequest osobaInsertRequest = new Model.Requests.OsobaInsertRequest()
             {
 
@@ -96,6 +150,10 @@ namespace Wellness.Mobile.ViewModels
                 };
                 var clan = await _apiService_Clan.Insert<Model.Requests.ClanViewRequest>(clanInsertRequest);
                 _clan = clan;
+
+                APIService._username = osobaInsertRequest.KorisnickoIme;
+                APIService._password = osobaInsertRequest.Password;
+
                 await PopupNavigation.Instance.PushAsync(new PopupView("Success", "Uspjesna registracija"));
             }
             else

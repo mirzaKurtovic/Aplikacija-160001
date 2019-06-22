@@ -121,8 +121,10 @@
 
                     <Label Text="Korisnicko ime"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                    <Entry Text="{Binding registerModel.KorisnickoIme}"/>
+                HorizontalOptions="CenterAndExpand"
+                           x:Name="LabelUsername"/>
+                    <Entry Text="{Binding registerModel.KorisnickoIme}"
+                           x:Name="EntryUsername"/>
                 </StackLayout>
 
                 <Button
@@ -131,7 +133,6 @@
                 Grid.Row="6"
                 Grid.ColumnSpan="2"
                 WidthRequest="70"
-                Clicked="Button_Clicked"
                 Text="Registruj se"
                 Command="{Binding RegisterCommand}"/>
 

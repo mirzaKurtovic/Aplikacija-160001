@@ -27,14 +27,12 @@ namespace Wellness.Mobile.Views
                 LabelPasswor.IsVisible = false;
                 EntryPasswordPotvrda.IsVisible = false;
                 LabelPasswordPotvrda.IsVisible = false;
+                EntryUsername.IsEnabled = false;
                 RegisterButton.Text = "Spasi";
             }
 
-    }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            
         }
+
+
     }
 }

@@ -61,12 +61,12 @@ namespace Wellness.WinUI.Trening
                 };
 
                 await _apiService.Update<Model.ClanPrisustvo>(request.ClanId,request);
-                this.Close();
-                MessageBox.Show("Lista prisutnih uspješno ažurirana !");
+                
             }
+            this.Close();
+            MessageBox.Show("Lista prisutnih uspješno ažurirana !");
 
 
-           
             _trening.Odrzan = true;
             var treningInsertRequest = new TreningInsertRequest()
             {

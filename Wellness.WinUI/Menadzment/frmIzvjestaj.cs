@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,15 +32,7 @@ namespace Wellness.WinUI.Menadzment
 
         }
 
-        private async void BtnUcitaj_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Chart1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void FrmIzvjestaj_Load(object sender, EventArgs e)
         {
@@ -85,8 +78,8 @@ namespace Wellness.WinUI.Menadzment
             if ((int)Tab1_cbPaket.SelectedValue != 0)
                 ClanarinaSearchRequest.PaketID = (int)Tab1_cbPaket.SelectedValue;
 
-            var clanarine = await _apiService_Clanarin.Get<List<Model.Clanarina>>(ClanarinaSearchRequest);
-
+            var cl = await _apiService_Clanarin.Get<List<Model.Clanarina>>(ClanarinaSearchRequest);
+            var clanarine = cl.OrderBy(c => c.UplataZaMjesec).ToList();
             if (Tab1_cbOmoguci_DatumPocetak.Checked)
                 clanarine = clanarine.Where(cp => cp.DatumUplate >= Tab1_dtpDatumPocetak.Value).ToList();
 
@@ -103,8 +96,12 @@ namespace Wellness.WinUI.Menadzment
             foreach (var x in clanarineGodine)
             {
 
-                this.chart1.Series["Zarada"].Points.AddXY(x.Last().UplataZaMjesec, x.Sum(y => y.IznosUplate));
-                this.chart1.Series["Prodano Paketa"].Points.AddXY(x.Last().UplataZaMjesec, x.Count());
+
+
+                var month = DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(x.Last().UplataZaMjesec);
+
+                this.chart1.Series["Zarada"].Points.AddXY(month, x.Sum(y => y.IznosUplate));
+                this.chart1.Series["Prodano Paketa"].Points.AddXY(month, x.Count());
 
             }
         }

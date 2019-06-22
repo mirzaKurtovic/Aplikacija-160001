@@ -113,25 +113,15 @@ namespace Wellness.WinUI.Menadzment
         }
 
 
-        private void TxtIzvor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private  void DgvIsplate_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private async void BtnTrazi_Click(object sender, EventArgs e)
         {
             var rphSearch = new RadnikIsplataSearchRequest();
 
             rphSearch.radnikId = (int?)cbRadnikSearch.SelectedValue;
             if (!string.IsNullOrWhiteSpace(txtUplataZaGodinuSearch.Text))
-                rphSearch.UplataZaMjesec = Convert.ToInt32(txtUplataZaGodinuSearch.Text);
-            if (!string.IsNullOrWhiteSpace(txtUplataZaGodinuSearch.Text))
                 rphSearch.UplataZaGodinu = Convert.ToInt32(txtUplataZaGodinuSearch.Text);
+            if (!string.IsNullOrWhiteSpace(txtUplataZaMjesec.Text))
+                rphSearch.UplataZaMjesec = Convert.ToInt32(txtUplataZaMjesec.Text);
 
 
             var RadniciPlateHistorija = await _apiService_RadnikPlataHistorija.Get<List<Model.RadnikPlataHistorija>>(rphSearch);
@@ -155,11 +145,6 @@ namespace Wellness.WinUI.Menadzment
         {
             if (_validation.Required(sender, e, RadnikIsplataErrorProvider))
                 _validation.MinMaxValue(sender, e, RadnikIsplataErrorProvider, 1, 12);
-        }
-
-        private void TxtRadnihSati_Validated(object sender, EventArgs e)
-        {
-            
         }
 
         private void TxtRadnihSati_Validating(object sender, CancelEventArgs e)

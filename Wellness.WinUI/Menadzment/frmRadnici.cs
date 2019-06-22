@@ -36,7 +36,7 @@ namespace Wellness.WinUI.Menadzment
             cbUloga.DataSource = uloge;
             cbUloga.ValueMember = "Id";
             cbUloga.DisplayMember = "Naziv";
-
+            cbUloga.DropDownStyle = ComboBoxStyle.DropDownList;
             var search = new RadnikSearchRequest()
             {
                 Ime = txtIme.Text,
@@ -74,7 +74,7 @@ namespace Wellness.WinUI.Menadzment
                 Model.Radnik obj = (Model.Radnik)row.DataBoundItem;
                 row.Cells[1].Value = obj.Osoba.Ime;
                 row.Cells[2].Value = obj.Osoba.Prezime;
-                row.Cells[2].Value = obj.Osoba.Uloga.Naziv;
+                row.Cells[3].Value = obj.Osoba.Uloga.Naziv;
             }
         }
 

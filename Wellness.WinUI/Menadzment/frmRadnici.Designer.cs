@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvRadnici = new System.Windows.Forms.DataGridView();
-            this.radnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtIme = new System.Windows.Forms.TextBox();
-            this.txtPrezime = new System.Windows.Forms.TextBox();
-            this.Ime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnTrazi = new System.Windows.Forms.Button();
-            this.cbUloga = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OsobaIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OsobaPrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +39,14 @@
             this.datumZaposlenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.osobaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OsobaUloga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.radnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.Ime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnTrazi = new System.Windows.Forms.Button();
+            this.cbUloga = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).BeginInit();
@@ -57,7 +57,7 @@
             this.groupBox1.Controls.Add(this.dgvRadnici);
             this.groupBox1.Location = new System.Drawing.Point(12, 158);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 229);
+            this.groupBox1.Size = new System.Drawing.Size(589, 229);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Radnici";
@@ -83,9 +83,66 @@
             this.dgvRadnici.Name = "dgvRadnici";
             this.dgvRadnici.ReadOnly = true;
             this.dgvRadnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRadnici.Size = new System.Drawing.Size(446, 210);
+            this.dgvRadnici.Size = new System.Drawing.Size(583, 210);
             this.dgvRadnici.TabIndex = 0;
             this.dgvRadnici.DoubleClick += new System.EventHandler(this.DgvRadnici_DoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // OsobaIme
+            // 
+            this.OsobaIme.HeaderText = "Ime";
+            this.OsobaIme.Name = "OsobaIme";
+            this.OsobaIme.ReadOnly = true;
+            // 
+            // OsobaPrezime
+            // 
+            this.OsobaPrezime.HeaderText = "Prezime";
+            this.OsobaPrezime.Name = "OsobaPrezime";
+            this.OsobaPrezime.ReadOnly = true;
+            // 
+            // _OsobaUloga
+            // 
+            this._OsobaUloga.HeaderText = "Uloga";
+            this._OsobaUloga.Name = "_OsobaUloga";
+            this._OsobaUloga.ReadOnly = true;
+            // 
+            // satnicaDataGridViewTextBoxColumn
+            // 
+            this.satnicaDataGridViewTextBoxColumn.DataPropertyName = "Satnica";
+            this.satnicaDataGridViewTextBoxColumn.HeaderText = "Satnica";
+            this.satnicaDataGridViewTextBoxColumn.Name = "satnicaDataGridViewTextBoxColumn";
+            this.satnicaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datumZaposlenjaDataGridViewTextBoxColumn
+            // 
+            this.datumZaposlenjaDataGridViewTextBoxColumn.DataPropertyName = "DatumZaposlenja";
+            this.datumZaposlenjaDataGridViewTextBoxColumn.HeaderText = "Datum zaposlenja";
+            this.datumZaposlenjaDataGridViewTextBoxColumn.Name = "datumZaposlenjaDataGridViewTextBoxColumn";
+            this.datumZaposlenjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumZaposlenjaDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // osobaDataGridViewTextBoxColumn
+            // 
+            this.osobaDataGridViewTextBoxColumn.DataPropertyName = "Osoba";
+            this.osobaDataGridViewTextBoxColumn.HeaderText = "Osoba";
+            this.osobaDataGridViewTextBoxColumn.Name = "osobaDataGridViewTextBoxColumn";
+            this.osobaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.osobaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // OsobaUloga
+            // 
+            this.OsobaUloga.DataPropertyName = "Id";
+            this.OsobaUloga.HeaderText = "Uloga";
+            this.OsobaUloga.Name = "OsobaUloga";
+            this.OsobaUloga.ReadOnly = true;
+            this.OsobaUloga.Visible = false;
             // 
             // radnikBindingSource
             // 
@@ -150,68 +207,11 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Uloga";
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OsobaIme
-            // 
-            this.OsobaIme.HeaderText = "Ime";
-            this.OsobaIme.Name = "OsobaIme";
-            this.OsobaIme.ReadOnly = true;
-            // 
-            // OsobaPrezime
-            // 
-            this.OsobaPrezime.HeaderText = "Prezime";
-            this.OsobaPrezime.Name = "OsobaPrezime";
-            this.OsobaPrezime.ReadOnly = true;
-            // 
-            // _OsobaUloga
-            // 
-            this._OsobaUloga.HeaderText = "Uloga";
-            this._OsobaUloga.Name = "_OsobaUloga";
-            this._OsobaUloga.ReadOnly = true;
-            // 
-            // satnicaDataGridViewTextBoxColumn
-            // 
-            this.satnicaDataGridViewTextBoxColumn.DataPropertyName = "Satnica";
-            this.satnicaDataGridViewTextBoxColumn.HeaderText = "Satnica";
-            this.satnicaDataGridViewTextBoxColumn.Name = "satnicaDataGridViewTextBoxColumn";
-            this.satnicaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datumZaposlenjaDataGridViewTextBoxColumn
-            // 
-            this.datumZaposlenjaDataGridViewTextBoxColumn.DataPropertyName = "DatumZaposlenja";
-            this.datumZaposlenjaDataGridViewTextBoxColumn.HeaderText = "Datum zaposlenja";
-            this.datumZaposlenjaDataGridViewTextBoxColumn.Name = "datumZaposlenjaDataGridViewTextBoxColumn";
-            this.datumZaposlenjaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumZaposlenjaDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // osobaDataGridViewTextBoxColumn
-            // 
-            this.osobaDataGridViewTextBoxColumn.DataPropertyName = "Osoba";
-            this.osobaDataGridViewTextBoxColumn.HeaderText = "Osoba";
-            this.osobaDataGridViewTextBoxColumn.Name = "osobaDataGridViewTextBoxColumn";
-            this.osobaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.osobaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OsobaUloga
-            // 
-            this.OsobaUloga.DataPropertyName = "Id";
-            this.OsobaUloga.HeaderText = "Uloga";
-            this.OsobaUloga.Name = "OsobaUloga";
-            this.OsobaUloga.ReadOnly = true;
-            this.OsobaUloga.Visible = false;
-            // 
             // frmRadnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 397);
+            this.ClientSize = new System.Drawing.Size(611, 398);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbUloga);
             this.Controls.Add(this.btnTrazi);

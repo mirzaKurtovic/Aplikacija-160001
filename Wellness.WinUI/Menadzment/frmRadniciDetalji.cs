@@ -287,10 +287,24 @@ namespace Wellness.WinUI.Menadzment
                     _validation.MinMaxLength(sender, e, radniciDetaljiErrorProvider, 3, 16);
         }
 
-        private void TxtUserName_Validating(object sender, CancelEventArgs e)
+        private async void TxtUserName_Validating(object sender, CancelEventArgs e)
         {
             if (_validation.Required(sender, e, radniciDetaljiErrorProvider))
-                    _validation.MinMaxLength(sender, e, radniciDetaljiErrorProvider, 3, 32);
+                if (_validation.MinMaxLength(sender, e, radniciDetaljiErrorProvider, 3, 32))
+                {
+                    var clanList =await _apiService.Get<List<Model.Osoba>>(new OsobaSearchReqeust() { Username = txtUserName.Text });
+
+                    if(_id==null)
+                    {
+                        if (clanList.Count > 0)
+                        {
+                            ((TextBox)sender).Focus();
+                            e.Cancel = true;
+                            radniciDetaljiErrorProvider.SetError(((TextBox)sender),"Korisnicko ime je vec iskoristeno");
+                        }
+                    }
+
+                }
         }
 
         private void TxtPassword_Validating(object sender, CancelEventArgs e)
@@ -320,7 +334,23 @@ namespace Wellness.WinUI.Menadzment
         {
             if (_id == null)
                 if (_validation.Required(sender, e, radniciDetaljiErrorProvider))
-                    _validation.MinMaxLength(sender, e, radniciDetaljiErrorProvider, 5, 32);
+                    if (_validation.MinMaxLength(sender, e, radniciDetaljiErrorProvider, 5, 32))
+                    {
+                        if (txtPassword.Text != txtPasswordPotvrda.Text)
+                        {
+                            e.Cancel = true;
+                            //radniciDetaljiErrorProvider.SetError((TextBox)sender, null);
+                            MessageBox.Show("Passwor-i se ne poklapaju");
+                            
+                            return;
+                        }
+                        else
+                        {
+                            e.Cancel = false;
+                            radniciDetaljiErrorProvider.SetError((TextBox)sender, null);
+                        }
+
+                    }
         }
 
 

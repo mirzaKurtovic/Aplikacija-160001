@@ -12,7 +12,6 @@ using Wellness.WebAPI.Database;
 
 namespace Wellness.WebAPI.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ClanController : ControllerBase

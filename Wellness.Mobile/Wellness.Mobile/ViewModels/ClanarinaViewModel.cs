@@ -49,7 +49,7 @@ namespace Wellness.Mobile.ViewModels
                     IznosUplate = Math.Round(x.IznosUplate, 2).ToString(),
                     Paket = x.Paket.Naziv,
                     UplataZaMjesec = x.UplataZaMjesec.ToString(),
-                    UplataZaGodinu = x.UplataZaMjesec.ToString()
+                    UplataZaGodinu = x.UplataZaGodinu.ToString()
                 };
 
                 clanarine.Add(clanarina);
