@@ -90,7 +90,13 @@ namespace Wellness.WinUI.Trening
         {
            
             var treningList = await _apiService_Trening.Get<List<Model.Trening>>(TreningSearch);
-            
+
+            if (_id != null)
+            {
+                //var tr =await _apiService_Trening.GetById<Model.Trening>(_id);
+                treningList = treningList.Where(t => t.Id != _id).ToList();
+            }
+
             if (treningList.Count != 0)
             {
                 var trening = treningList[0];
@@ -182,6 +188,11 @@ namespace Wellness.WinUI.Trening
             if (_validation.Required(sender, e, epTreningDetalji))
                 if (_validation.IsNumberOnly(sender, e, epTreningDetalji))
                     _validation.MinMaxValue(sender, e, epTreningDetalji, 1, 150);
+        }
+
+        private void BtnPonisti_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

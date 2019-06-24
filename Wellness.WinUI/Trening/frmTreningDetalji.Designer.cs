@@ -156,6 +156,7 @@
             this.btnPonisti.TabIndex = 11;
             this.btnPonisti.Text = "Ponisti";
             this.btnPonisti.UseVisualStyleBackColor = true;
+            this.btnPonisti.Click += new System.EventHandler(this.BtnPonisti_Click);
             // 
             // btnPogledajPrisutne
             // 

@@ -83,7 +83,7 @@ namespace Wellness.WinUI.Clanarina
             cbClan.DataSource = clanovi;
             cbClan.DisplayMember = "Display";
             cbClan.ValueMember = "Id";
-
+            cbClan.DropDownStyle = ComboBoxStyle.DropDownList;
 
             var defaultPaket = new Model.Paket()
             {
@@ -95,8 +95,8 @@ namespace Wellness.WinUI.Clanarina
             cbPaket.DataSource = paketi;
             cbPaket.DisplayMember = "Display";
             cbPaket.ValueMember = "Id";
-           
-           
+            cbPaket.DropDownStyle = ComboBoxStyle.DropDownList;
+
             foreach (DataGridViewRow row in dgvClanarina.Rows)
             {
                 Model.Clanarina obj = (Model.Clanarina)row.DataBoundItem;
