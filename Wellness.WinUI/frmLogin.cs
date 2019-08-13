@@ -71,5 +71,11 @@ namespace Wellness.WinUI
 
 
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            txtSifra.Text = "";
+            txtSifra.PasswordChar = '*';
+        }
     }
 }

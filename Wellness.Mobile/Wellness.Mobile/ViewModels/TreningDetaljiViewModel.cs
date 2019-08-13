@@ -44,6 +44,43 @@ namespace Wellness.Mobile.ViewModels
             TreningMod = treningModel;
 
 
+
+            var prisustvo = AsyncHelpers.RunSync<List<Wellness.Model.ClanPrisustvo>>(() => _apiService_ClanPrisustvo.Get<List<Model.ClanPrisustvo>>(new ClanPrisustvoSearchRequest() { TreningId = trening.Id, ClanId = clan.Id }));
+
+
+            if (prisustvo.Count > 0)
+            {
+                treningModel.ClanPrisustvovaoTreningu = prisustvo[0].Prisustvovao;
+                treningModel._Prisustvuje = true;
+                treningModel.PrisustvoId = prisustvo[0].Id;
+                if (prisustvo[0].Ocjena != null)
+                {
+                    treningModel._Ocjena = (int)prisustvo[0].Ocjena;
+                    treningModel.Ocjenjen = true;
+                }
+                else
+                {
+                    treningModel._Ocjena = 0;
+                    treningModel.Ocjenjen = false;
+                }
+            }
+            else
+            {
+                if (prisustvo.Count == 0)
+                {
+                    treningModel.ClanPrisustvovaoTreningu = false;
+                    treningModel._Prisustvuje = false;
+                    treningModel.Ocjenjen = false;
+                    treningModel.PrisustvoId = 0;
+                    treningModel._Ocjena = 0;
+                }
+            }
+
+
+
+
+
+
             List<Wellness.Mobile.Models.PrisutniModel> prisutni = new List<Wellness.Mobile.Models.PrisutniModel>();
             foreach (Wellness.Model.ClanPrisustvo x in trenutnoPrisutnih)
             {
@@ -79,6 +116,9 @@ namespace Wellness.Mobile.ViewModels
                 };
                 treningDetaljiModel.RecommendedTrening.Add(tr);
             }
+
+          
+
 
         }
         public TreningDetaljiViewModel()

@@ -185,7 +185,10 @@ namespace Wellness.WinUI
             frm.Show();
         }
 
-
-
+        private void TipTreningaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Menadzment.TipTreninga();
+            frm.Show();
+        }
     }
 }

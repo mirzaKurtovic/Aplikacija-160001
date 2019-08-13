@@ -13,6 +13,7 @@ namespace Wellness.WebAPI.Database
         public int Id { get; set; }
         public string TipTreninga1 { get; set; }
         public string Opis { get; set; }
+        public byte[] Image { get; set; }
 
         public virtual ICollection<Trening> Trening { get; set; }
     }

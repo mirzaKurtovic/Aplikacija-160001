@@ -40,10 +40,11 @@
             this.pregledToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.noviRadnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.isplataRadnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izvjestavanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.izvjestavanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipTreningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +113,8 @@
             this.pregledToolStripMenuItem2,
             this.noviRadnikToolStripMenuItem,
             this.isplataRadnikaToolStripMenuItem,
-            this.izvjestavanjeToolStripMenuItem});
+            this.izvjestavanjeToolStripMenuItem,
+            this.tipTreningaToolStripMenuItem});
             this.menadzmentToolStripMenuItem.Name = "menadzmentToolStripMenuItem";
             this.menadzmentToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.menadzmentToolStripMenuItem.Text = "Menadzment";
@@ -138,6 +140,13 @@
             this.isplataRadnikaToolStripMenuItem.Text = "Isplata radnika";
             this.isplataRadnikaToolStripMenuItem.Click += new System.EventHandler(this.IsplataRadnikaToolStripMenuItem_Click);
             // 
+            // izvjestavanjeToolStripMenuItem
+            // 
+            this.izvjestavanjeToolStripMenuItem.Name = "izvjestavanjeToolStripMenuItem";
+            this.izvjestavanjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.izvjestavanjeToolStripMenuItem.Text = "Izvjestavanje";
+            this.izvjestavanjeToolStripMenuItem.Click += new System.EventHandler(this.IzvjestavanjeToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -154,12 +163,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // izvjestavanjeToolStripMenuItem
+            // tipTreningaToolStripMenuItem
             // 
-            this.izvjestavanjeToolStripMenuItem.Name = "izvjestavanjeToolStripMenuItem";
-            this.izvjestavanjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.izvjestavanjeToolStripMenuItem.Text = "Izvjestavanje";
-            this.izvjestavanjeToolStripMenuItem.Click += new System.EventHandler(this.IzvjestavanjeToolStripMenuItem_Click);
+            this.tipTreningaToolStripMenuItem.Name = "tipTreningaToolStripMenuItem";
+            this.tipTreningaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipTreningaToolStripMenuItem.Text = "Tip treninga";
+            this.tipTreningaToolStripMenuItem.Click += new System.EventHandler(this.TipTreningaToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -200,6 +209,7 @@
         private System.Windows.Forms.ToolStripMenuItem pregledToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem isplataRadnikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izvjestavanjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipTreningaToolStripMenuItem;
     }
 }
 

@@ -109,5 +109,10 @@ namespace Wellness.WinUI.Clanarina
                 if (_validation.IsNumberOnly(sender, e, ClanarineErrorProvider))
                     _validation.MinMaxValue(sender, e, ClanarineErrorProvider, 1, 1000);
         }
+
+        private void FrmClanarinaDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
     }
 }

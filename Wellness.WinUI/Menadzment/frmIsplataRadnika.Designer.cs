@@ -414,6 +414,7 @@
             this.Controls.Add(this.cbRadnik);
             this.Name = "frmIsplataRadnika";
             this.Text = "frmIsplataRadnika";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmIsplataRadnika_FormClosing);
             this.Load += new System.EventHandler(this.FrmIsplataRadnika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radnikPlataHistorijaBindingSource)).EndInit();

@@ -131,7 +131,7 @@ namespace Wellness.Mobile.ViewModels
             };
 
             search.TipTreningaID = SelectedTipTreninga.Id;
-
+            
 
             var list = await _apiService.Get<List<Model.Trening>>(search);
             Trening.Clear();
@@ -159,8 +159,7 @@ namespace Wellness.Mobile.ViewModels
                     ClanId = ClanId,
                     TrenutnoPrisutnih = trenutnoPrisutnih.Count,
                     Odrzan = x.Odrzan,
-
-
+                    Image = x.TipTreninga.Image
 
                 };
 

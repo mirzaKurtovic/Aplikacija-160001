@@ -6,11 +6,11 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Wellness.Model.Requests;
 using Wellness.WebAPI.Database;
 
 namespace Wellness.WebAPI.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TipTreningaController : ControllerBase
@@ -28,6 +28,18 @@ namespace Wellness.WebAPI.Controllers
         {
             var list = _context.TipTreninga.ToList();
             return _mapper.Map<List<Model.TipTreninga>>(list);
+        }
+        [HttpPost]
+        public ActionResult<Model.TipTreninga> Insert(TipTreningaInsertRequest request)
+        {
+            var tipTreninga = _mapper.Map<Database.TipTreninga>(request);
+
+            var result = _context.TipTreninga.Add(tipTreninga);
+            _context.SaveChanges();
+          
+
+            return _mapper.Map<Model.TipTreninga>(tipTreninga);
+
         }
 
 

@@ -19,18 +19,19 @@
             FlowDirection="LeftToRight"
             >
             <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="1" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="75" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="1" />
-                <RowDefinition Height="15" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="1" />
-                <RowDefinition Height="15" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -39,6 +40,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <StackLayout
+                Grid.Row="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="LightBlue"
+                >
+                <Label Text="video..."/>
+            </StackLayout>
 
             <Label Text="{Binding treningDetaljiModel.TreningModel.TipTreninga}"
                 VerticalOptions="CenterAndExpand" 
@@ -46,7 +54,7 @@
                    FontSize="18"
                    FontAttributes="Bold"
                    Grid.Column="1"
-                   Grid.Row="0"
+                   Grid.Row="1"
                    />
             <Label Text="{Binding treningDetaljiModel.TreningModel.DatumTreninga}"
                 VerticalOptions="CenterAndExpand" 
@@ -54,31 +62,47 @@
                    FontSize="18"
                    FontAttributes="Bold"
                    Grid.Column="1"
-                   Grid.Row="1"
+                   Grid.Row="2"
                    />
             <Label Text="{Binding treningDetaljiModel.TreningModel.PocetakKraj}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    FontSize="16"
                    Grid.Column="1"
-                   Grid.Row="2"
+                   Grid.Row="3"
                    />
             <Label Text="{Binding treningDetaljiModel.TreningModel.Trener}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    FontSize="16"
                    Grid.Column="1"
-                   Grid.Row="3"
+                   Grid.Row="4"
                    />
+
             <Label Text="{Binding treningDetaljiModel.TreningModel.TrenutnoMaxPrisutnih}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    FontSize="13"
                    Grid.Column="1"
-                   Grid.Row="4"
+                   Grid.Row="5"
                    />
+            <Button 
+                  Text="Ocjeni"
+                    CommandParameter="{Binding .}"
+                    Clicked="Button_Clicked"
+                    IsVisible="{Binding treningDetaljiModel.TreningModel.ClanPrisustvovaoTreningu}"
+                    IsEnabled="{Binding treningDetaljiModel.TreningModel.OcjenjenNeagtive}"
+                    Grid.Row="5"
+                                            />
 
-
+            <Entry  Placeholder="5" 
+                    IsVisible="{Binding treningDetaljiModel.TreningModel.ClanPrisustvovaoTreningu}"
+                    Keyboard="Numeric"
+                    Text="{Binding treningDetaljiModel.TreningModel.Ocjena}"
+                    IsEnabled="{Binding treningDetaljiModel.TreningModel.OcjenjenNeagtive}"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    />
 
             <BoxView BackgroundColor="Black" WidthRequest="1" HeightRequest="1" Grid.Row="6" Grid.ColumnSpan="3"/>
             <Label 
@@ -87,6 +111,7 @@
                 Text="Prisustva"/>
             <ListView 
                 Grid.Row="8"
+                Grid.RowSpan="2"
                 Grid.ColumnSpan="3"
                 ItemsSource="{Binding treningDetaljiModel.PrisutniModel}">
                 <ListView.ItemTemplate>
@@ -123,13 +148,13 @@
 
             
             
-            <BoxView BackgroundColor="Black" WidthRequest="1" HeightRequest="1" Grid.Row="9" Grid.ColumnSpan="3"/>
+            <BoxView BackgroundColor="Black" WidthRequest="1" HeightRequest="1" Grid.Row="10" Grid.ColumnSpan="3"/>
             <Label 
-                Grid.Row="10"
+                Grid.Row="11"
                 Grid.Column="0"
                 Text="Slicni treninzi"/>
             <ListView 
-                Grid.Row="11"
+                Grid.Row="12"
                 Grid.ColumnSpan="3"
                 ItemsSource="{Binding treningDetaljiModel.RecommendedTrening}"
                 SelectedItem="ListView_ItemSelected"

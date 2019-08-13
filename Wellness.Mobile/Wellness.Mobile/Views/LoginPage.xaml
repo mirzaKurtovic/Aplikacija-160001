@@ -21,6 +21,7 @@
       HorizontalOptions="CenterAndExpand" />
             <Entry
       Text="{Binding Password}"
+      IsPassword="True"
                 />
 
             <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Prijava"></Button>

@@ -68,7 +68,7 @@ namespace Wellness.WinUI.Trening
             cbTipTreninga.DataSource = tipTreninga;
             cbTipTreninga.ValueMember = "Id";
             cbTipTreninga.DisplayMember = "TipTreninga1";
-
+            cbTipTreninga.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (_id.HasValue)
             {
@@ -193,6 +193,11 @@ namespace Wellness.WinUI.Trening
         private void BtnPonisti_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmTreningDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
         }
     }
 }

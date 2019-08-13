@@ -26,6 +26,7 @@ namespace Wellness.WebAPI.Mappers
             CreateMap<Database.Osoba, Model.Osoba>();
             CreateMap<Database.Radnik, Model.Radnik>();
             CreateMap<Database.Trener, Model.Trener>();
+            CreateMap<Database.TipTreninga, Model.TipTreninga>();
             CreateMap<Database.RadnikPlataHistorija, Model.RadnikPlataHistorija>();
             CreateMap<Model.Requests.ClanPrisustvoInsertRequest, Database.ClanPrisustvo>();
             CreateMap<Model.Requests.OsobaInsertRequest, Database.Osoba>();
@@ -34,6 +35,9 @@ namespace Wellness.WebAPI.Mappers
             CreateMap<Model.Requests.ClanarinaInsertRequest, Database.Clan>();
             CreateMap<Model.Requests.ClanInsertRequest, Database.Clan>();
             CreateMap<Model.Requests.RadnikIsplataInsertRequest, Database.RadnikPlataHistorija>();
+            CreateMap<Model.Requests.TipTreningaInsertRequest, Database.TipTreninga>();
+
+
             //test
 
         }

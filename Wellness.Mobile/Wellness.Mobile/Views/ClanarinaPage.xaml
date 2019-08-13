@@ -15,14 +15,32 @@
 
 
 
+        <StackLayout>
+
+            <Picker 
+                    Margin="10"
+                    ItemsSource ="{Binding UplataZaGodinu}"
+                    SelectedItem="{Binding _SelectedUplataZaGodinu}"
+                    Title="Uplata za godinu"
+                    />
+
+            <Picker 
+                    Margin="10"
+                    ItemsSource ="{Binding UplataZaMjesec}"
+                    SelectedItem="{Binding _SelectedUplataZaMjesec}"
+                    Title="Uplata za mjesec"
+                    />
+            <Picker 
+                    Margin="10"
+                    ItemsSource ="{Binding SortirajPo}" 
+
+                    SelectedItem="{Binding _SelectedSortirajPo}"
+                    Title="Sortiraj po"
+                    />
 
 
 
-
-
-
-
-        <ListView ItemsSource="{Binding clanarine}">
+            <ListView ItemsSource="{Binding clanarine}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -50,13 +68,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-
-
-
-
-
-
-
+        </StackLayout>
 
 
 

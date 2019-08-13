@@ -28,7 +28,7 @@ namespace Wellness.Mobile.Models
         public bool? ClanPrisustvovaoTreningu { get; set; }
         public bool? Odrzan { get; set; }
         public bool Ocjenjen { get; set; }
-
+        public byte[] Image { get; set; }
 
         public int _Ocjena { get; set; }
         public int Ocjena

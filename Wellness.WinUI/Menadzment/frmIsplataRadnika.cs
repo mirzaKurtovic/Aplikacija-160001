@@ -152,6 +152,11 @@ namespace Wellness.WinUI.Menadzment
             if (_validation.Required(sender, e, RadnikIsplataErrorProvider))
                 _validation.MinMaxValue(sender, e, RadnikIsplataErrorProvider, 0, 1000);
         }
+
+        private void FrmIsplataRadnika_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
     }
 }
 

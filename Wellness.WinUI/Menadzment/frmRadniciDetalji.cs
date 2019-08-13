@@ -390,6 +390,16 @@ namespace Wellness.WinUI.Menadzment
 
         }
 
+        private void FrmRadniciDetalji_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+
+
+
+
+
+
 
     }
     public class Spol {

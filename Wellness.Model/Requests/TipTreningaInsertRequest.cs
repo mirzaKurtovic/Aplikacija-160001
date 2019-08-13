@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Wellness.Model
+namespace Wellness.Model.Requests
 {
-    public partial class TipTreninga
+    public class TipTreningaInsertRequest
     {
-        public int Id { get; set; }
         public string TipTreninga1 { get; set; }
         public string Opis { get; set; }
         public byte[] Image { get; set; }
-
     }
 }

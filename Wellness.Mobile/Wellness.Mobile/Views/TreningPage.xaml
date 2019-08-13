@@ -2,13 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+             xmlns:converters="clr-namespace:Wellness.Mobile.Converters"
              x:Class="Wellness.Mobile.Views.TreningPage">
     <ContentPage.BindingContext>
         <vm:TreningViewModel>
 
         </vm:TreningViewModel>
     </ContentPage.BindingContext>
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
     <ContentPage.Content>
 
 
@@ -47,6 +55,13 @@
                             <StackLayout Padding="10" Orientation="Horizontal">
 
                                 <StackLayout Orientation="Vertical">
+
+                                    <Image Source="{Binding  Image, Converter={StaticResource imgConv}}"
+                                           HeightRequest="200"
+                                           WidthRequest="300"
+                                           FlowDirection="LeftToRight"
+                                           ></Image>
+
                                     <Label Text="{Binding TipTreninga}" 
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemTextStyle}"
