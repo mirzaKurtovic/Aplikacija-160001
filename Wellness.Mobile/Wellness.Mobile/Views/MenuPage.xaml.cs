@@ -21,10 +21,10 @@ namespace Wellness.Mobile.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Opis, Title="Opis" },
-                new HomeMenuItem {Id = MenuItemType.TreningPage, Title="Treninzi" },
-                new HomeMenuItem {Id = MenuItemType.Clanarine, Title="Clanarina" },
-                new HomeMenuItem {Id = MenuItemType.MojProfil, Title="Profil" },
+                new HomeMenuItem {Id = MenuItemType.Opis, Title="Opis aplikacije" },
+                new HomeMenuItem {Id = MenuItemType.TreningPage, Title="Pregled treninga" },
+                new HomeMenuItem {Id = MenuItemType.Clanarine, Title="Pregled clanarina" },
+                new HomeMenuItem {Id = MenuItemType.MojProfil, Title="Moj Profil" },
             };
 
             ListViewMenu.ItemsSource = menuItems;

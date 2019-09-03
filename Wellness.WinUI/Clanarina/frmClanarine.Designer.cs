@@ -272,7 +272,7 @@
             this.Controls.Add(this.btnTrazi);
             this.Controls.Add(this.gbClanarina);
             this.Name = "frmClanarine";
-            this.Text = "frmClanarine";
+            this.Text = "Clanarina - Osnovni prikaz";
             this.Load += new System.EventHandler(this.FrmClanarine_Load);
             this.gbClanarina.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanarina)).EndInit();

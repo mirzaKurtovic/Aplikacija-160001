@@ -154,7 +154,7 @@
             this.btnPonisti.Name = "btnPonisti";
             this.btnPonisti.Size = new System.Drawing.Size(447, 23);
             this.btnPonisti.TabIndex = 2;
-            this.btnPonisti.Text = "Ponisti";
+            this.btnPonisti.Text = "Izlaz";
             this.btnPonisti.UseVisualStyleBackColor = true;
             this.btnPonisti.Click += new System.EventHandler(this.BtnPonisti_Click);
             // 
@@ -175,7 +175,7 @@
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTreningPrisutni";
-            this.Text = "frmTreningPrisutni";
+            this.Text = "Trening - Pregled prisutnih";
             this.Load += new System.EventHandler(this.FrmTreningPrisutni_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanoviPrisustvo)).EndInit();

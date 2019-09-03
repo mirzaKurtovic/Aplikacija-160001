@@ -99,7 +99,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(944, 457);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Zarada";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // Paket
@@ -107,9 +107,9 @@
             this.Paket.AutoSize = true;
             this.Paket.Location = new System.Drawing.Point(15, 19);
             this.Paket.Name = "Paket";
-            this.Paket.Size = new System.Drawing.Size(87, 13);
+            this.Paket.Size = new System.Drawing.Size(82, 13);
             this.Paket.TabIndex = 17;
-            this.Paket.Text = "Uplata za godinu";
+            this.Paket.Text = "Uplata za paket";
             // 
             // Tab1_cbPaket
             // 
@@ -242,7 +242,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(944, 457);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Prisustvo";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Tab2_cbOmoguci_DatumKraj
@@ -355,10 +355,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 487);
+            this.ClientSize = new System.Drawing.Size(955, 488);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmIzvjestaj";
-            this.Text = "frmIzvjestaj";
+            this.Text = "Kreiranje izvještaja";
             this.Load += new System.EventHandler(this.FrmIzvjestaj_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

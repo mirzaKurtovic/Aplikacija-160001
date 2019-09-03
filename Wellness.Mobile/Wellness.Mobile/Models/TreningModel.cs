@@ -86,6 +86,12 @@ namespace Wellness.Mobile.Models
         {
             get { return !Ocjenjen; }
         }
-
+        public bool? ClanPrisustvovaoTreninguNeagativ
+        {
+            get
+            {
+                return !ClanPrisustvovaoTreningu;
+            }
+        }
     }
 }

@@ -41,14 +41,19 @@ namespace Wellness.Mobile.Views
         {
 
             var item = e.SelectedItem as Wellness.Mobile.Models.TreningModel;
+            if (item == null)
+                return;
+
             var trening = await _apiService_Trening.GetById<Wellness.Model.Trening>(item.Id);
 
-
-
-
             await Navigation.PushAsync(new TreningDetalji(trening,_clan));
+
+            
         }
 
+
+
+        /*
         private async void Button_Clicked(object sender, EventArgs e)
         {
             var item  = (TreningModel)((Button)sender).CommandParameter;
@@ -76,6 +81,6 @@ namespace Wellness.Mobile.Views
             }
 
         }
-
+        */
     }
 }

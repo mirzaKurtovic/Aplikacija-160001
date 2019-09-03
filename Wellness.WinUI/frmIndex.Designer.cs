@@ -41,10 +41,10 @@
             this.noviRadnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.isplataRadnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izvjestavanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipTreningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tipTreningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -67,21 +67,21 @@
             this.pregledToolStripMenuItem,
             this.novaClanarinaToolStripMenuItem});
             this.clanarinaToolStripMenuItem.Name = "clanarinaToolStripMenuItem";
-            this.clanarinaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.clanarinaToolStripMenuItem.Text = "Clanarina";
+            this.clanarinaToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.clanarinaToolStripMenuItem.Text = "Upravljanje clanarinama";
             // 
             // pregledToolStripMenuItem
             // 
             this.pregledToolStripMenuItem.Name = "pregledToolStripMenuItem";
-            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.pregledToolStripMenuItem.Text = "Pregled";
+            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.pregledToolStripMenuItem.Text = "Pregled clanarina";
             this.pregledToolStripMenuItem.Click += new System.EventHandler(this.PregledToolStripMenuItem_Click);
             // 
             // novaClanarinaToolStripMenuItem
             // 
             this.novaClanarinaToolStripMenuItem.Name = "novaClanarinaToolStripMenuItem";
-            this.novaClanarinaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.novaClanarinaToolStripMenuItem.Text = "Nova clanarina";
+            this.novaClanarinaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.novaClanarinaToolStripMenuItem.Text = "dodaj novu clanarinu";
             this.novaClanarinaToolStripMenuItem.Click += new System.EventHandler(this.NovaClanarinaToolStripMenuItem_Click);
             // 
             // treningToolStripMenuItem
@@ -90,21 +90,21 @@
             this.pregledToolStripMenuItem1,
             this.noviTreningToolStripMenuItem});
             this.treningToolStripMenuItem.Name = "treningToolStripMenuItem";
-            this.treningToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.treningToolStripMenuItem.Text = "Trening";
+            this.treningToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.treningToolStripMenuItem.Text = "Upravljanje treninzima";
             // 
             // pregledToolStripMenuItem1
             // 
             this.pregledToolStripMenuItem1.Name = "pregledToolStripMenuItem1";
-            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
-            this.pregledToolStripMenuItem1.Text = "Pregled";
+            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem1.Text = "Pregled treninga";
             this.pregledToolStripMenuItem1.Click += new System.EventHandler(this.PregledToolStripMenuItem1_Click);
             // 
             // noviTreningToolStripMenuItem
             // 
             this.noviTreningToolStripMenuItem.Name = "noviTreningToolStripMenuItem";
-            this.noviTreningToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.noviTreningToolStripMenuItem.Text = "Novi trening";
+            this.noviTreningToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviTreningToolStripMenuItem.Text = "Dodaj novi trening";
             this.noviTreningToolStripMenuItem.Click += new System.EventHandler(this.NoviTreningToolStripMenuItem_Click);
             // 
             // menadzmentToolStripMenuItem
@@ -122,30 +122,37 @@
             // pregledToolStripMenuItem2
             // 
             this.pregledToolStripMenuItem2.Name = "pregledToolStripMenuItem2";
-            this.pregledToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.pregledToolStripMenuItem2.Text = "Pregled";
+            this.pregledToolStripMenuItem2.Size = new System.Drawing.Size(195, 22);
+            this.pregledToolStripMenuItem2.Text = "Pregled korisnika";
             this.pregledToolStripMenuItem2.Click += new System.EventHandler(this.PregledToolStripMenuItem2_Click);
             // 
             // noviRadnikToolStripMenuItem
             // 
             this.noviRadnikToolStripMenuItem.Name = "noviRadnikToolStripMenuItem";
-            this.noviRadnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.noviRadnikToolStripMenuItem.Text = "Novi radnik";
+            this.noviRadnikToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.noviRadnikToolStripMenuItem.Text = "Dodaj novog radnika";
             this.noviRadnikToolStripMenuItem.Click += new System.EventHandler(this.NoviRadnikToolStripMenuItem_Click);
             // 
             // isplataRadnikaToolStripMenuItem
             // 
             this.isplataRadnikaToolStripMenuItem.Name = "isplataRadnikaToolStripMenuItem";
-            this.isplataRadnikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.isplataRadnikaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.isplataRadnikaToolStripMenuItem.Text = "Isplata radnika";
             this.isplataRadnikaToolStripMenuItem.Click += new System.EventHandler(this.IsplataRadnikaToolStripMenuItem_Click);
             // 
             // izvjestavanjeToolStripMenuItem
             // 
             this.izvjestavanjeToolStripMenuItem.Name = "izvjestavanjeToolStripMenuItem";
-            this.izvjestavanjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.izvjestavanjeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.izvjestavanjeToolStripMenuItem.Text = "Izvjestavanje";
             this.izvjestavanjeToolStripMenuItem.Click += new System.EventHandler(this.IzvjestavanjeToolStripMenuItem_Click);
+            // 
+            // tipTreningaToolStripMenuItem
+            // 
+            this.tipTreningaToolStripMenuItem.Name = "tipTreningaToolStripMenuItem";
+            this.tipTreningaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.tipTreningaToolStripMenuItem.Text = "Dodaj novi tip treninga";
+            this.tipTreningaToolStripMenuItem.Click += new System.EventHandler(this.TipTreningaToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -163,13 +170,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // tipTreningaToolStripMenuItem
-            // 
-            this.tipTreningaToolStripMenuItem.Name = "tipTreningaToolStripMenuItem";
-            this.tipTreningaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tipTreningaToolStripMenuItem.Text = "Tip treninga";
-            this.tipTreningaToolStripMenuItem.Click += new System.EventHandler(this.TipTreningaToolStripMenuItem_Click);
-            // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,7 +180,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmIndex";
-            this.Text = "frmIndex";
+            this.Text = "Wellness centar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmIndex_Load);
             this.menuStrip.ResumeLayout(false);

@@ -100,7 +100,7 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "Prijava";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

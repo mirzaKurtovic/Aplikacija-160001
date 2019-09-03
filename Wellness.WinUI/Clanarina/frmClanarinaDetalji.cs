@@ -46,7 +46,7 @@ namespace Wellness.WinUI.Clanarina
 
                 txtUplataZaGodinu.Text = clanarina.UplataZaGodinu.ToString();
                 txtUplataZaMjesec.Text = clanarina.UplataZaMjesec.ToString();
-                txtIznos.Text = clanarina.IznosUplate.ToString();
+                txtIznos.Text = Math.Round(clanarina.IznosUplate,0).ToString();
                 dateDatumUplate.Value = clanarina.DatumUplate;
                 cbPaket.SelectedValue = clanarina.PaketId;
                 cbClan.SelectedValue = clanarina.ClanId;
@@ -74,13 +74,13 @@ namespace Wellness.WinUI.Clanarina
                 {
 
                     await _apiService.Update<Model.Clanarina>(_id, request);
-                    MessageBox.Show("Uspjesno ste evidentirali novu clanarinu", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Uspjesno ste azurirali clanarinu", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
                     await _apiService.Insert<Model.Clanarina>(request);
-                    MessageBox.Show("Uspjesno ste azurirali clanarinu", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Uspjesno ste evidentirali novu clanarinu", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }

@@ -38,7 +38,8 @@ namespace Wellness.Mobile.ViewModels
                 Trener = trening.Trener.Radnik.Osoba.Ime + " " + trening.Trener.Radnik.Osoba.Prezime,
                 TipTreninga = trening.TipTreninga.TipTreninga1,
                 ClanId = clan.Id,
-                TrenutnoPrisutnih = trenutnoPrisutnih.Count
+                TrenutnoPrisutnih = trenutnoPrisutnih.Count,
+                Image = trening.TipTreninga.Image
             };
             treningDetaljiModel.TreningModel = treningModel;
             TreningMod = treningModel;

@@ -104,12 +104,21 @@ namespace Wellness.WinUI.Menadzment
         }
         private void TxtRadnihSati_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtSatnica.Text) && !string.IsNullOrEmpty(txtRadnihSati.Text))
+            string str = txtRadnihSati.Text;
+            foreach (char c in str)
             {
-                var radnik = (Model.Radnik)cbRadnik.SelectedItem;
-                txtSatnica.Text = Math.Round(radnik.Satnica, 2).ToString();
-                txtTotal.Text = Math.Round((Convert.ToInt32(txtRadnihSati.Text) * radnik.Satnica), 2).ToString();
+                if (c < '0' || c > '9')
+                    return;
             }
+
+
+            if (!string.IsNullOrEmpty(txtSatnica.Text) && !string.IsNullOrEmpty(txtRadnihSati.Text))
+                {
+                    var radnik = (Model.Radnik)cbRadnik.SelectedItem;
+                    txtSatnica.Text = Math.Round(radnik.Satnica, 2).ToString();
+                    txtTotal.Text = Math.Round((Convert.ToInt32(txtRadnihSati.Text) * radnik.Satnica), 2).ToString();
+                }
+            
         }
 
 
@@ -150,7 +159,8 @@ namespace Wellness.WinUI.Menadzment
         private void TxtRadnihSati_Validating(object sender, CancelEventArgs e)
         {
             if (_validation.Required(sender, e, RadnikIsplataErrorProvider))
-                _validation.MinMaxValue(sender, e, RadnikIsplataErrorProvider, 0, 1000);
+                if(_validation.IsNumberOnly(sender,e, RadnikIsplataErrorProvider))
+                     _validation.MinMaxValue(sender, e, RadnikIsplataErrorProvider, 0, 1000);
         }
 
         private void FrmIsplataRadnika_FormClosing(object sender, FormClosingEventArgs e)

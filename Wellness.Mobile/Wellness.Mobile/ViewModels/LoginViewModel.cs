@@ -41,7 +41,7 @@ namespace Wellness.Mobile.ViewModels
         async Task Register()
         {
 
-            Application.Current.MainPage = new RegisterPage(null);
+             Application.Current.MainPage = new RegisterPage(null);
 
         }
 

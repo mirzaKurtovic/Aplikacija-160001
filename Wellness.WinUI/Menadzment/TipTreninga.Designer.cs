@@ -140,7 +140,7 @@
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.pbSlika);
             this.Name = "TipTreninga";
-            this.Text = "TipTreninga";
+            this.Text = "Tip treninga - detaljan prikaz";
             this.Load += new System.EventHandler(this.TipTreninga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             this.ResumeLayout(false);

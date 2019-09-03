@@ -191,7 +191,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbTipTreninga);
             this.Name = "frmTreningDetalji";
-            this.Text = "frmTreningDetalji";
+            this.Text = "Trening - detaljan prikaz";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTreningDetalji_FormClosing);
             this.Load += new System.EventHandler(this.FrmTreningDetalji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epTreningDetalji)).EndInit();

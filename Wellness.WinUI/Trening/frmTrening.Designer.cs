@@ -240,7 +240,7 @@
             this.Controls.Add(this.cbTipTreninga);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTrening";
-            this.Text = "frmTrening";
+            this.Text = "Pregled treninga";
             this.Load += new System.EventHandler(this.FrmTrening_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreninzi)).EndInit();

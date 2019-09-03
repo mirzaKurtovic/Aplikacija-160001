@@ -357,7 +357,7 @@
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.Ime);
             this.Name = "frmRadniciDetalji";
-            this.Text = "frmRadniciDetalji";
+            this.Text = "Korisnici - detaljan prikaz";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmRadniciDetalji_FormClosing);
             this.Load += new System.EventHandler(this.FrmRadniciDetalji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radniciDetaljiErrorProvider)).EndInit();

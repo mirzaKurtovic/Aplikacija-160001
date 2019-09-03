@@ -181,7 +181,7 @@
             this.Controls.Add(this.lblUplataZaGodinu);
             this.Controls.Add(this.label1);
             this.Name = "frmClanarinaDetalji";
-            this.Text = "frmClanarinaDetalji";
+            this.Text = "Clanarina - detaljan prikaz";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmClanarinaDetalji_FormClosing);
             this.Load += new System.EventHandler(this.FrmClanarinaDetalji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClanarineErrorProvider)).EndInit();

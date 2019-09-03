@@ -221,7 +221,7 @@
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRadnici";
-            this.Text = "frmRadnici";
+            this.Text = "Pregled korisnika";
             this.Load += new System.EventHandler(this.FrmRadnici_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).EndInit();

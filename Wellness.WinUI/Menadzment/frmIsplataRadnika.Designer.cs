@@ -413,7 +413,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbRadnik);
             this.Name = "frmIsplataRadnika";
-            this.Text = "frmIsplataRadnika";
+            this.Text = "Pregled isplata";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmIsplataRadnika_FormClosing);
             this.Load += new System.EventHandler(this.FrmIsplataRadnika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsplate)).EndInit();

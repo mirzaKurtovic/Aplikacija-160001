@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Wellness.Mobile.ViewModels"
+                           Title="Prijava"
              x:Class="Wellness.Mobile.Views.LoginPage">
     <ContentPage.BindingContext>
         <vm:LoginViewModel></vm:LoginViewModel>

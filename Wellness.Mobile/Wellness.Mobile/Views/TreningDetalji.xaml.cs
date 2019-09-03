@@ -37,6 +37,7 @@ namespace Wellness.Mobile.Views
 
 
             await Navigation.PushAsync(new TreningDetalji(trening, _clan));
+            
         }
 
 
@@ -60,7 +61,7 @@ namespace Wellness.Mobile.Views
 
                 var result = await _apiService_ClanPrisustvo.Update<Wellness.Model.ClanPrisustvo>(item.PrisustvoId, clanPrisustvoInsertRequest);
 
-                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Uspjesno ste ocijenili trening !"));
+                await PopupNavigation.Instance.PushAsync(new PopupView("Success", "Uspjesno ste ocijenili trening !"));
 
 
 

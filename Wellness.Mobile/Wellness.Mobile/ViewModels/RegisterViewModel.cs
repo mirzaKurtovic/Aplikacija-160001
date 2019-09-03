@@ -71,27 +71,71 @@ namespace Wellness.Mobile.ViewModels
 
 
             #region primitiveValidation
+            if (registerModel.Ime != null)
+            {
+                if (registerModel.Ime.Length > 32)
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Ime ne smije biti duze od 32 karaktera"));
+                    return;
+                }
+            }
+            else
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Ime obavezno"));
+                return;
+            }
 
-            if (registerModel.Ime.Length > 32)
+            if (registerModel.Prezime != null)
             {
-                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Ime ne smije biti duze od 32 karaktera"));
+                if (registerModel.Prezime.Length > 32)
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Prezime ne smije biti duze od 32 karaktera"));
+                    return;
+                }
+            }
+            else
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Preziem obavezno"));
                 return;
             }
-            if (registerModel.Prezime.Length > 32)
+
+            if (registerModel.BrojTelefona != null)
             {
-                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Prezime ne smije biti duze od 32 karaktera"));
+                if (!registerModel.BrojTelefona.Any(char.IsDigit))
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Broj telefona mora biti sastavljen od brojeva"));
+                    return;
+                }
+            }
+            else
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Broj telefona obavezan"));
                 return;
             }
-            if (registerModel.JMBG.Length != 13)
+
+            if (registerModel.JMBG!= null)
             {
-                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG mora biti 13 karaktera"));
+                if (registerModel.JMBG.Length != 13)
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG mora biti 13 karaktera"));
+                    return;
+                }
+            }
+            else
+            {
+                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG obavezan"));
                 return;
             }
-            if (!registerModel.JMBG.Any(char.IsDigit))
+
+            if (registerModel.JMBG != null)
             {
-                await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG mora biti sastavljen od brojeva"));
-                return;
+                if (!registerModel.JMBG.Any(char.IsDigit))
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "JMBG mora biti sastavljen od brojeva"));
+                    return;
+                }
             }
+
             if (string.IsNullOrEmpty(registerModel.KorisnickoIme))
             {
                 await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Korisnicko ime obavezno"));
@@ -111,6 +155,11 @@ namespace Wellness.Mobile.ViewModels
                     return;
                 }
 
+                if(registerModel.Password==null || registerModel.PasswordPotvrda==null)
+                {
+                    await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Password/Password-potvrda obavezni !"));
+                    return;
+                }
                 if (registerModel.Password != registerModel.PasswordPotvrda)
                 {
                     await PopupNavigation.Instance.PushAsync(new PopupView("Error", "Password-i se ne podudaraju"));
@@ -136,6 +185,9 @@ namespace Wellness.Mobile.ViewModels
 
             if (_osoba == null)
             {
+
+
+
                 osobaInsertRequest.Password = registerModel.Password;
                 osobaInsertRequest.PasswordPotvrda = registerModel.PasswordPotvrda;
 
